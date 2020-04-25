@@ -482,6 +482,7 @@
     </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
+    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=p1FfChKnk09DuehzHaekvH11uk8FzN7lnpy11ZHjexBfK4erKzJti5nHukcX"></script></span>
   </footer>
 
   <!-- Control Sidebar -->
