@@ -16,4 +16,10 @@
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
+    <div class="form-group">
+        <iframe src="https://kingston.app.box.com/embed/s/0kws9ln9pl7dgxnzbnjaup97gc93iuxs?sortColumn=date&view=icon&showItemFeedActions=false&showParentPath=false" width="800" height="550" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
+    </div>
+    <div class="form-group">
+    <iframe src="https://outlook.office365.com/owa/calendar/56882a8189e447a0b9aa45b7c03772e1@kingston.ac.uk/5522679601af4eaa926e153a944c362116265537781715627134/calendar.html" width="800" height="550" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
+    </div>
 @endsection

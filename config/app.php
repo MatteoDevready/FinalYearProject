@@ -176,6 +176,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //google login
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
     ],
 
     /*
@@ -228,6 +231,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // 'Form' => Collective\Html\FormFacade::class,
         // 'Html' => Collective\Html\HtmlFacade::class,
+        //google login
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

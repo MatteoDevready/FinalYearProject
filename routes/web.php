@@ -15,8 +15,6 @@
 
 //use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route;
-//route for contacts data that redirect to the index view
-//Route::get('/contacts', 'ContactsController@index');
 //creting route for user
 //the @ call a method within the controller
 Route::get('/layout', 'PagesController@index');
@@ -34,9 +32,6 @@ Route::resource('users', 'UserController');
 Route::get('/contacts', 'JoinTablesContactsAndGroups@index');
 
 //Auth::routes();
-//The shortcut below in line 38 allow to call all the function
-//that I created in one go
-//compared to the previous get method
 Route:: resource('posts', 'PostsController');
 //Route::put('edit', 'PostsController@update');
 Route:: resource('projects', 'ProjectsController');
@@ -53,6 +48,32 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//google login api
+  
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
 
-//routing StreamAPI
+//routing StreamChatAPI
 Route::get('/', 'HomeController@chat');
+
+//google calendar APi routing
+Route::name('google.index')->get('google', 'GoogleAccountController@index');
+Route::name('google.store')->get('google/oauth', 'GoogleAccountController@store');
+Route::name('google.destroy')->delete('google/{googleAccount}', 'GoogleAccountController@destroy');
+
+//calendar events and meetings routing
+
+// Venues
+Route::delete('venues/destroy', 'VenuesController@massDestroy')->name('venues.massDestroy');
+Route::resource('venues', 'VenuesController');
+
+// Events
+Route::delete('events/destroy', 'EventsController@massDestroy')->name('events.massDestroy');
+Route::resource('events', 'EventsController');
+
+// Meetings
+Route::delete('meetings/destroy', 'MeetingsController@massDestroy')->name('meetings.massDestroy');
+Route::resource('meetings', 'MeetingsController');
+
+Route::get('calendars', 'SystemCalendarController@index');
